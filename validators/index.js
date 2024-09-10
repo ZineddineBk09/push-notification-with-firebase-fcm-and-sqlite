@@ -1,13 +1,13 @@
 import { z } from "zod";
 
 const createDriverNotificationSchema = z.object({
-  token: z.string().min(1),
+  driverId: z.string().min(1),
   title: z.string().optional().default("FleetRun"),
   body: z.string().min(1),
 });
 
 const createPushNotificationSchema = z.object({
-  driverId: z.string().min(1),
+  token: z.string().min(1),
   title: z.string().optional().default("FleetRun"),
   body: z.string().min(1),
   type: z.string().min(1),
@@ -18,6 +18,11 @@ const sendBatchNotificationSchema = z.object({
   title: z.string().optional().default("FleetRun"),
   body: z.string().min(1),
   type: z.string().min(1),
+});
+
+const updatePushNotificationReadStatusSchema = z.object({
+  token: z.string().min(1),
+  read: z.boolean(),
 });
 
 const createDriverSchema = z.object({
@@ -34,6 +39,7 @@ export {
   createPushNotificationSchema,
   createDriverNotificationSchema,
   sendBatchNotificationSchema,
+  updatePushNotificationReadStatusSchema,
   createDriverSchema,
   updateDriverSchema,
 };
