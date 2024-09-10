@@ -32,12 +32,12 @@ This is a RESTful API service for handling push notifications, built with Expres
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/push-notification-service.git
+   git clone https://github.com/ZineddineBk09/push-notification-with-firebase-fcm-and-sqlite.git
    ```
 
 2. Navigate to the project directory:
    ```
-   cd push-notification-service
+   cd push-notification-with-firebase-fcm-and-sqlite
    ```
 
 3. Install dependencies:
