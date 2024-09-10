@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import driverRoutes from "./routes/driver.js";
+import driverRoutes from "./routes/index.js";
 import sequelize from "./db/sqlite3.js";
 import dotenv from "dotenv";
 dotenv.config();
@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 
 sequelize
   .sync({
-    force: true, // true => to drop the table and recreate db
+    sync: true, // true => This checks what is the current state of the table in the database (which columns it has, what are their data types, etc), and then performs the necessary changes in the table to make it match the model.
   })
   .then(() => {
     console.log("Database & tables created!");
