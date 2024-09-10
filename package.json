@@ -4,6 +4,7 @@
     "start": "nodemon server.js"
   },
   "dependencies": {
+    "@sequelize/mysql": "^7.0.0-alpha.41",
     "amqplib": "^0.10.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
