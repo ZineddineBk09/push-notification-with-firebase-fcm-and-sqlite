@@ -20,8 +20,8 @@ const sendFCMNotificationMiddleware = async (req, res, next) => {
       notification: {
         title: title || "FleetRun",
         body: body || "",
-        type: type || "",
       },
+      data: { type: type || "" },
       token: token,
     };
 
@@ -41,8 +41,6 @@ const sendFCMNotificationMiddleware = async (req, res, next) => {
 const sendBatchFCMNotificationMiddleware = async (req, res, next) => {
   const { tokens, title, body, type } = req.body;
 
-  console.log("Sending Notifications in Batch", req.body);
-
   // Validate the request using Zod
   const parsedData = sendBatchNotificationSchema.safeParse(req.body);
   if (!parsedData.success) {
@@ -60,8 +58,8 @@ const sendBatchFCMNotificationMiddleware = async (req, res, next) => {
       notification: {
         title: title || "FleetRun",
         body: body || "",
-        type: type || "",
       },
+      data: { type: type || "" },
       tokens,
     };
 
