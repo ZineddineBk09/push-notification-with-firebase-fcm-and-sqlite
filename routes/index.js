@@ -14,7 +14,7 @@ import {
 
 const router = express.Router();
 
-router.use(verifyToken);
+// router.use(verifyToken);
 
 // Push Notifications
 router.post(
