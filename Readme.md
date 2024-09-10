@@ -84,4 +84,4 @@ This service uses SQLite as the database, with Sequelize as the ORM. The databas
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see thwe [LICENSE.md](LICENSE.md) file for details.
