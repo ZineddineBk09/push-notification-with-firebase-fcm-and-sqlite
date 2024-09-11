@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 });
 
 app.get("/", (req, res) => {
-  res.send("<h3>This is the FCM server</h3>");
+  res.send("This is the FCM server");
 });
 
 sequelize
