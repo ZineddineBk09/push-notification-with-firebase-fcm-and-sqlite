@@ -48,10 +48,7 @@ const sendBatchNotification = (req, res) => {
     return res.status(400).send({ errors: parsedData.error.errors });
   }
 
-  return res.status(200).send({ message: "Send batch notification executed" });
-
-  const { tokens, title, body, type, notification_id, created_at } =
-    parsedData.data;
+  const { tokens, title, body, type } = parsedData.data;
 
   // Create notifications for each driver
   const notifications = tokens.map((token) => ({

@@ -14,22 +14,22 @@ import {
 
 const router = express.Router();
 
-// router.use(verifyToken);
+router.use(verifyToken);
 
 // Push Notifications
-// router.post(
-//   "/notification",
-//   sendFCMNotificationMiddleware,
-//   createPushNotification
-// );
 router.post(
   "/notification",
+  sendFCMNotificationMiddleware,
+  createPushNotification
+);
+router.post(
+  "/notification/batch",
   sendBatchFCMNotificationMiddleware,
   sendBatchNotification
 );
 
-// router.get("/notification/:fcmToken", findAllPushNotifications);
-// router.get("/notification/unread/:fcmToken", findAllUnreadNotifications);
-// router.put("/notification", updatePushNotification);
+router.get("/notification/:fcmToken", findAllPushNotifications);
+router.get("/notification/unread/:fcmToken", findAllUnreadNotifications);
+router.put("/notification", updatePushNotification);
 
 export default router;
