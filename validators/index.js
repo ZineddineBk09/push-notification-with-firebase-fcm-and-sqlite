@@ -11,6 +11,8 @@ const createPushNotificationSchema = z.object({
   title: z.string().optional().default("FleetRun"),
   body: z.string().min(1),
   type: z.string().min(1),
+  notification_id: z.string(),
+  created_at: z.date().optional().default(new Date().toDateString()),
 });
 
 const sendBatchNotificationSchema = z.object({
@@ -18,6 +20,8 @@ const sendBatchNotificationSchema = z.object({
   title: z.string().optional().default("FleetRun"),
   body: z.string().min(1),
   type: z.string().min(1),
+  notification_id: z.string(),
+  created_at: z.string().optional().default(new Date().toDateString()),
 });
 
 const updatePushNotificationReadStatusSchema = z.object({

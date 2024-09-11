@@ -39,7 +39,7 @@ const sendFCMNotificationMiddleware = async (req, res, next) => {
 
 // Middleware to send batch FCM notifications
 const sendBatchFCMNotificationMiddleware = async (req, res, next) => {
-  const { tokens, title, body, type } = req.body;
+  const { tokens, title, body, type, notification_id, created_at } = req.body;
 
   // Validate the request using Zod
   const parsedData = sendBatchNotificationSchema.safeParse(req.body);
@@ -59,7 +59,7 @@ const sendBatchFCMNotificationMiddleware = async (req, res, next) => {
         title: title || "FleetRun",
         body: body || "",
       },
-      data: { type: type || "" },
+      data: { type: type || "", notification_id, created_at },
       tokens,
     };
 
