@@ -17,13 +17,13 @@ const router = express.Router();
 // router.use(verifyToken);
 
 // Push Notifications
+// router.post(
+//   "/notification",
+//   sendFCMNotificationMiddleware,
+//   createPushNotification
+// );
 router.post(
   "/notification",
-  sendFCMNotificationMiddleware,
-  createPushNotification
-);
-router.post(
-  "/notification/batch",
   sendBatchFCMNotificationMiddleware,
   sendBatchNotification
 );
